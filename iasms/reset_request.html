@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <!-- External CSS (optional, if you have it) -->
+    <link rel="stylesheet" href="css/style.css">
+    <!-- External JS (optional, if needed) -->
+    <script src="js/jquery-3.1.1.min.js" defer></script>
+    <script src="js/bootstrap.min.js" defer></script>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow: hidden;
+        }
+        
+        .reset-wrap {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 2.5rem;
+            border-radius: 15px;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            max-width: 420px;
+            text-align: center;
+            backdrop-filter: blur(15px);
+            border: 1px solid rgba(255, 255, 255, 0.25);
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .reset-wrap h2 {
+            margin-bottom: 1.5rem;
+            color: #fff;
+            font-weight: 600;
+            font-size: 1.8rem;
+            letter-spacing: 1px;
+        }
+        
+        .reset-wrap form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+        
+        .reset-wrap .group {
+            text-align: left;
+        }
+        
+        .reset-wrap .label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: #f1f1f1;
+            font-weight: 400;
+            transition: color 0.3s ease;
+        }
+        
+        .reset-wrap .input {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid rgba(255, 255, 255, 0.5);
+            border-radius: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            color: #fff;
+            font-size: 1rem;
+            outline: none;
+            transition: all 0.3s ease;
+        }
+        
+        .reset-wrap .input:focus {
+            border-color: #fff;
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+        }
+        
+        .reset-wrap .input::placeholder {
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        .reset-wrap .button {
+            padding: 0.9rem;
+            border: none;
+            background: linear-gradient(90deg, #28a745, #34c759);
+            color: white;
+            font-size: 1rem;
+            font-weight: 600;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .reset-wrap .button:hover {
+            background: linear-gradient(90deg, #218838, #2ba84a);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(40, 167, 69, 0.4);
+        }
+        
+        .reset-wrap .button:active {
+            transform: translateY(1px);
+            box-shadow: none;
+        }
+        
+        .reset-wrap a {
+            color: #e0e0e0;
+            text-decoration: none;
+            font-size: 0.9rem;
+            margin-top: 1.5rem;
+            display: inline-block;
+            transition: color 0.3s ease;
+        }
+        
+        .reset-wrap a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 480px) {
+            .reset-wrap {
+                padding: 1.5rem;
+                max-width: 100%;
+            }
+            .reset-wrap h2 {
+                font-size: 1.5rem;
+            }
+            .reset-wrap .input,
+            .reset-wrap .button {
+                font-size: 0.9rem;
+                padding: 0.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="reset-wrap">
+        <h2>Reset Password</h2>
+        <form method="post" action="reset_password.php">
+            <div class="group">
+                <label for="email" class="label">Email Address</label>
+                <input id="email" type="email" class="input" name="email" placeholder="Enter your email" required>
+            </div>
+            <div class="group">
+                <input type="submit" class="button" value="Send Reset Link" name="btn_reset_request">
+            </div>
+        </form>
+        <a href="index.php">Back to Home</a>
+    </div>
+</body>
+
+</html>
